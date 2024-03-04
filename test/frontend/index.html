@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js'></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type='text/javascript' src='/frontend/lib/knockout-3.5.1.debug.js'></script>
+    <script type='text/javascript' src='/frontend/lib/DateFormat.js'></script>
+    <script src='/frontend/lib/knockout-es5.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <title>Мои заметки</title>
+</head>
+
+<body>
+    <div class="container">
+        <span class="title">Мои заметки</span>
+        <div class="cards">
+            <div class="deck" data-bind="foreach: all_notes">
+                <div class="card">
+                    <div contenteditable="true" class="cardHeader" data-bind="editableNote: $data, dataKey: 'title'"></div>
+                    <div contenteditable="true" class="cardBody" data-bind="editableNote: $data, dataKey: 'body'"></div>
+                    <div class="cardFooter" data-bind="text: dateFormat($data.date, 'mmmm dS, yyyy, h:MM TT')"></div>
+
+                    <img src="/frontend/assets/icons/remove.svg" alt="delete" class="img_x" data-bind="click: async function delete_note() {await Note.prototype.del($data.id)}">
+
+                </div>
+            </div>
+        </div>
+        <i class="fa-solid fa-bucket"></i>
+        <img src="assets/icons/plus.svg" alt="+" class="img_plus" onclick="Note.prototype.post_new()" 0data-bind="click: async function push_note() {await Note.prototype.post_new()}">
+        </div>
+    <script src="Note.js"></script>
+    <!-- <script src="index.js"></script> -->
+
+</body>
+
+</html>
+

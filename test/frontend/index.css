@@ -1,0 +1,155 @@
+.title{
+    margin-inline-start: 40%;
+    font-size: 28px;
+    font-weight: 700;
+    color:#07508f;
+}
+
+.container{
+    inline-size: 85%;
+    margin: auto;
+}
+
+.cards{
+    margin-top: 30px;
+}
+
+.deck {
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    align-items: stretch;
+}
+
+.card {
+    position: relative;
+    background-color: #BFE2FF;
+    padding: 10px;
+    z-index: 5;
+    border-radius: 12px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+    transition: 200ms ease-in-out;
+    transform: scale(0.95);
+    margin: 20px;
+}
+.card:hover {
+    z-index: 7;
+    transform: scale(1);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+}
+
+.cardHeader {
+    font-size: 26px;
+    color: #337AB7;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    border: transparent;
+    width: 85%;
+    margin: 0;
+}
+
+.cardHeader p{
+    margin: 0;
+}
+
+.cardHeader,
+.cardBody:focus-visible{
+    outline: 0;
+
+}
+
+.cardBody {
+    padding: 0 10px 30px;
+    margin: 0;
+    height: fit-content;
+    color: #337AB7;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    margin-block-end: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+.cardBody textarea::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    }
+
+.cardFooter {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    text-align: end;
+    line-height: 1.5;
+    margin-block-end: 10px;
+    color: #58abf1;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+@media (max-inline-size: 767px) {
+    .card {
+        transform: scale(1);
+    }
+    .card:nth-of-type(even) {
+        margin-inline-start: 40px;
+        margin-inline-end: -40px;
+        margin-block-start: 20px;
+    } 
+    .card:nth-of-type(odd) {
+        margin-inline-start: -40px;
+        margin-inline-end: 40px;
+        margin-block-start: 20px;
+    }  
+}
+@media (max-inline-size: 620px) {
+    .card:nth-of-type(even),
+    .card:nth-of-type(odd){
+        margin: 20px;
+    } 
+}
+
+.img_plus{
+    width: 50px;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.img_x{
+    width: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.img_edit{
+    width: 29px;
+    position: absolute;
+    top: 15px;
+    right: 54px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.save {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #007eaf;
+    border: 6px solid #007eaf;
+    outline: 5px solid rgba(50, 109, 220, 0.6);
+    border-radius: 2rem;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
